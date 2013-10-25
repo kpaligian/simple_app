@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Matches";
+}
+
+<h2>Matches</h2>
+<input type="text" ng-model="search.$" placeholder="Search"/>
+<h1>Applicants</h1>
+<div ng-controller="ApplicantsCtrl">
+	<table>
+		<colgroup>
+			<col span="2" style="width:100px;" />
+		</colgroup>
+		<tr>
+			<th>Name</th>
+			<th>Rate</th>
+		</tr>
+		<tr ng-repeat="applicant in applicants.Applicants.matches | filter:search">
+
+			<td>{{applicant.name}}</td>
+			<td>{{applicant.rate}}</td>
+		</tr>
+	</table>
+</div>

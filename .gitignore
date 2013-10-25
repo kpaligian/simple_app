@@ -1,0 +1,14 @@
+packages/
+src/Core/bin/
+src/Core/obj/
+src/Data/bin/
+src/Data/obj/
+src/IntegrationTests/bin/
+src/IntegrationTests/obj/
+src/Services/bin/
+src/Services/obj/
+src/UnitTests/bin/
+src/UnitTests/obj/
+src/WebApi/bin/
+src/WebApi/obj/
+src/WebApi/node_modules/

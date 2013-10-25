@@ -1,0 +1,21 @@
+<input type="text" ng-model="search.$" placeholder="Search"/>
+<h1>Applicants</h1>
+<div ng-controller="simple.applications.ApplicantsCtrl">
+    <table>
+        <colgroup>
+            <col span="2" style="width:100px;" />
+        </colgroup>
+        <tr>
+            <th>Name</th>
+            <th>Rate</th>
+        </tr>
+        <tr ng-repeat="applicant in applicants | filter:search">
+
+            <td>{{applicant.Name}}</td>
+            <td>{{applicant.Rate}}</td>
+        </tr>
+    </table>
+
+</div>
+
+
