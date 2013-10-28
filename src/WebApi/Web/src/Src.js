@@ -1,7 +1,7 @@
 ﻿angular.module("simple.applications", []).config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/applications');
 
-    var views = 'web/src/applications/views/';
+    var views = '/simple-app/web/src/applications/views/';
 
     $stateProvider.state('applications', {
         url: "/applications",
@@ -40,7 +40,7 @@ var Simple;
                 this.$inject = ['$scope', '$http'];
                 $scope.applicants = [];
 
-                $http.get("resources/applicants").then(function (result) {
+                $http.get("/simple-app/resources/applicants").then(function (result) {
                     angular.copy(result.data, $scope.applicants);
                 }, function () {
                     console.log("api error");
@@ -64,7 +64,7 @@ var Simple;
                 this.$inject = ['$scope', '$http', '$log'];
                 $scope.name = "";
                 $scope.save = function (user) {
-                    $http.post("/resources/applicants", user, { 'Content-Type': 'application/json' }).then(function (data) {
+                    $http.post("/simple-app/resources/applicants", user, { 'Content-Type': 'application/json' }).then(function (data) {
                         $scope.name = data.data.Name;
                     }, function () {
                         console.log("post fail");

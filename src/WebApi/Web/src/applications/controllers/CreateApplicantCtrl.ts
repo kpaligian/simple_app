@@ -5,7 +5,7 @@ module Simple.Applications {
         constructor($scope, $http) {
             $scope.name = "";
             $scope.save = function (user) {
-                $http.post("/resources/create_applicant", user, { 'Content-Type': 'application/json' })
+                $http.post("/simple-app/resources/applicants", user, { 'Content-Type': 'application/json' })
                     .then((data) => {
                         $scope.name = data.data.Name;
                     },

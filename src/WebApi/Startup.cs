@@ -20,7 +20,7 @@ namespace Simple.Web.Windsor.Owin
         public void Configuration(IAppBuilder builder) 
         {
             builder.Use(typeof(CustomTracer));
-            //builder.Map("/resources", sw => sw.UseSimpleWeb());
+           // builder.Map("/resources", sw => sw.UseSimpleWeb());
             //builder.UseNancy();
             builder.UseStaticFiles("/Web", "Web");
             builder.UseStaticFiles("/Scripts", "Scripts");
@@ -32,9 +32,9 @@ namespace Simple.Web.Windsor.Owin
             //builder.UseWebApi(config);
             
             
-            //IWindsorContainer container = new WindsorContainer().Install(FromAssembly.This());
-            //var controllerFactory = new WindsorControllerFactory(container.Kernel);
-            //ControllerBuilder.Current.SetControllerFactory(controllerFactory);
+            IWindsorContainer container = new WindsorContainer().Install(FromAssembly.This());
+            var controllerFactory = new WindsorControllerFactory(container.Kernel);
+            ControllerBuilder.Current.SetControllerFactory(controllerFactory);
          
 
         }

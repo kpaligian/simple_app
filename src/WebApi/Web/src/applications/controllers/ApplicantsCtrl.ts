@@ -5,7 +5,7 @@
         constructor($scope,$http) {
             $scope.applicants = [];
 
-            $http.get("resources/applicants")
+            $http.get("/simple-app/resources/applicants")
                 .then(function (result) {
                     angular.copy(result.data, $scope.applicants);
                 },

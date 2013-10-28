@@ -5,7 +5,7 @@ angular.module("simple.applications", []).config(($stateProvider, $urlRouterProv
     //Default State
     $urlRouterProvider.otherwise('/applications');
 
-    var views = 'web/src/applications/views/';
+    var views = '/simple-app/web/src/applications/views/';
 
     //States
     $stateProvider
